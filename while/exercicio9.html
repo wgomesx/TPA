@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function gerarNumeroAleatorio() {
+  return Math.floor(Math.random() * 10) + 1;
+}
+
+function jogoDeAdivinhacao() {
+  const numeroSorteado = gerarNumeroAleatorio();
+  let tentativas = 0;
+
+  while (true) {
+    const numeroJogador = parseInt(prompt("Digite um número entre 1 e 10:"));
+
+    if (isNaN(numeroJogador) || numeroJogador < 1 || numeroJogador > 10) {
+      alert("Por favor, digite um número válido entre 1 e 10.");
+    } else {
+      tentativas++;
+
+      if (numeroJogador === numeroSorteado) {
+        alert(`Parabéns! Você acertou o número ${numeroSorteado} em ${tentativas} tentativas. Você ganhou um prêmio!`);
+        break;
+      } else {
+        alert("Você errou. Tente novamente.");
+      }
+    }
+  }
+}
+
+jogoDeAdivinhacao();
+
+    </script>
+</body>
+</html>
